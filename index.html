@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calculadora</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 flex items-center justify-center min-h-screen">
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white p-6 rounded-lg shadow-lg w-80">
+    <h1 class="text-2xl font-bold text-center mb-4">Calculadora</h1>
+    <input
+      type="text"
+      id="display"
+      class="w-full mb-4 p-2 text-right text-xl border rounded bg-gray-50"
+      disabled
+    />
+    <div class="grid grid-cols-4 gap-2">
+      <!-- Botones -->
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn operator">/</button>
 
-  <div class="calculadora grid grid-cols-4 gap-3 p-6 bg-gray-800 rounded-xl shadow-lg w-80">
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn operator">*</button>
 
-    <!-- Pantalla -->
-    <div class="pantalla col-span-4 bg-gray-700 text-right text-white text-3xl p-4 rounded-md font-mono">0</div>
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn operator">-</button>
 
-    <!-- Botones -->
-    <button id="c" class="btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded">C</button>
-    <button id="borrar" class="btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded">←</button>
-    <button class="btn bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 rounded">/</button>
-    <button class="btn bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 rounded">*</button>
+      <button class="btn">0</button>
+      <button class="btn">.</button>
+      <button class="btn" id="clear">C</button>
+      <button class="btn operator">+</button>
 
-    <button class="btn bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 rounded">7</button>
-    <button class="btn bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 rounded">8</button>
-    <button class="btn bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 rounded">9</button>
-    <button class="btn bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 rounded">-</button>
-
-    <button class="btn bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 rounded">4</button>
-    <button class="btn bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 rounded">5</button>
-    <button class="btn bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 rounded">6</button>
-    <button class="btn bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 rounded">+</button>
-
-    <button class="btn bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 rounded">1</button>
-    <button class="btn bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 rounded">2</button>
-    <button class="btn bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 rounded">3</button>
-    <button id="igual" class="btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded">=</button>
-
-    <button id="cero" class="btn col-span-2 bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 rounded">0</button>
-    <button id="igual" class="btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded">=</button>
-
-
+      <button class="btn col-span-4 bg-blue-500 text-white" id="equals">=</button>
+    </div>
   </div>
 
-  <script src="./js/main.js"></script>
+  <script src="./main.js"></script>
 </body>
 </html>
