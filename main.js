@@ -21,12 +21,10 @@ document.addEventListener("DOMContentLoaded", () => { // declaramos el evento DO
     updateDisplay();// actualizamos la pantalla de la calculadora
   };
 
-  const evaluarExpresion = () => {// declaramos esta funcion para evaluar lo que ingrese el usuario
-    // Validar que la expresión no termine con un operador, no tenga operadores consecutivos, no empiece con * o /, y no esté vacía
-    if (
-      /([+\-*/]{2,})|([+\-*/]$)/.test(inputUser) || // operadores repetidos o al final
-      /^[*/]/.test(inputUser) || // empieza con * o /
-      inputUser.trim() === "" // está vacío
+  const evaluarExpresion = () => {// declaramos una funcion evaluarExpresion para verificar lo que el usuario ha ingresado en la pantalla de la calculadora
+    if (/([+\-*/]{2,})|([+\-*/]$)/.test(inputUser) || // no hemos visto expresiones regulares, pero la revise ya que la conocia del curso 20, en esta ocacion usamos para evitar que lo que escriba el usuario contenga dos operadores seguidos o termine en un operador, cada para de esta expresion tiene una funcion especifica, /../ delimita la funcion, [+\-*/]{2,} busca dos o mas operadores seguidos, | es el operador que significa "o", y [+\-*/]$ busca un operador al final de la cadena, g al final indica que se debe buscar globalmente en toda la cadena que escribe el usuario, el .test(inputUser) es un metodo que se usa para probar si la cadena inputUser cumple con la expresión regular, si cumple, devuelve true, si no, devuelve false.
+      /^[*/]/.test(inputUser) || // esta expresión regular verifica si la cadena comienza con un operador de multiplicación o división, lo que no es válido en una expresión matemática.
+      inputUser.trim() === "" // incluimos el metodo .trim() para eliminar espacios vacios ya que al usarlo en un celular me percate de la alta probabilidad de que el usuario escriba espacios vacios sin quererlo, y al ocurrir esto, la expresión se volvería inválida.
     ) {
       inputUser = "Error";// si la expresión es inválida, asignamos "Error" a inputUser
       updateDisplay();// actualizamos la pantalla de la calculadora
@@ -43,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => { // declaramos el evento DO
   };
 
   const calcular = (expresion) => {// declaramos la funcion calcular que recibe una expresión matemática como parámetro
-    const tokens = expresion.match(/(\d+(\.\d+)?)|[+\-*/]/g);// (no hemos visto todavia expresiones regulares, pero la revise ya que si las conocia del curso 20, en esta ocacion usamos una expresión regular para dividir la expresión en números y operadores. La expresión busca números enteros o decimales y los operadores +, -, *, /), cada parte de la expresion tiene una funcion especifica, /../ delimita la funcion, \d+ busca numeros de 1 o mas digitos, (\.\d+)? busca numeros decimales, | es un operador que significa "o", y [+\-*/] busca los operadores matemáticos, g al final indica que se debe buscar globalmente en toda la cadena que escribe el usuario.
+    const tokens = expresion.match(/(\d+(\.\d+)?)|[+\-*/]/g);//declaramos una variable tokens  siendo un token lo que ingresa el usuario, en esta ocacion usamos una expresión regular para dividir la expresión en números y operadores. La expresión busca números enteros o decimales y los operadores +, -, *, /), el .match es un metodo que se usa para buscar coincidencias en una cadena asegurandonos que no se repita ningun operador y al hacerlo de el mensaje de error, cada parte de la expresion tiene una funcion especifica, /../ delimita la funcion, \d+ busca numeros de 1 o mas digitos, (\.\d+)? busca numeros decimales, | es un operador que significa "o", y [+\-*/] busca los operadores matemáticos, g al final indica que se debe buscar globalmente en toda la cadena que escribe el usuario.
     if (!tokens) throw new Error("Expresión inválida");// si no hay tokens, lanzamos un error indicando que la expresión es inválida
 
     let paso1 = []; // declaramos un array paso1 para almacenar los resultados de las operaciones de multiplicación y división
