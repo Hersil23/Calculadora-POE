@@ -6,38 +6,36 @@
   <title>Calculadora</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-  <div class="bg-white p-6 rounded-lg shadow-lg w-80">
-    <h1 class="text-2xl font-bold text-center mb-4">Calculadora</h1>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen">
+  <div class="bg-blue-500 p-6 rounded-lg shadow-lg w-80">
+    <h1 class="text-2xl font-bold text-center mb-4">Ejercicio de POE js.</h1>
     <input
-      type="text"
-      id="display"
-      class="w-full mb-4 p-2 text-right text-xl border rounded bg-gray-50"
+      type="text" id="display" class="w-full mb-4 p-2 text-right text-xl border rounded bg-gray-900 text-white"
       disabled
     />
     <div class="grid grid-cols-4 gap-2">
       <!-- Botones -->
-      <button class="btn">7</button>
-      <button class="btn">8</button>
-      <button class="btn">9</button>
-      <button class="btn operator">/</button>
+      <button class="btn hover:bg-blue-600 text-white text-2xl">7</button>
+      <button class="btn hover:bg-blue-600 text-white text-2xl">8</button>
+      <button class="btn hover:bg-blue-600 text-white text-2xl">9</button>
+      <button class="btn operator hover:bg-blue-600 text-white text-2xl">/</button>
 
-      <button class="btn">4</button>
-      <button class="btn">5</button>
-      <button class="btn">6</button>
-      <button class="btn operator">*</button>
+      <button class="btn hover:bg-blue-600 text-white text-2xl">4</button>
+      <button class="btn hover:bg-blue-600 text-white text-2xl">5</button>
+      <button class="btn hover:bg-blue-600 text-white text-2xl">6</button>
+      <button class="btn operator hover:bg-blue-600 text-white text-2xl">*</button>
 
-      <button class="btn">1</button>
-      <button class="btn">2</button>
-      <button class="btn">3</button>
-      <button class="btn operator">-</button>
+      <button class="btn hover:bg-blue-600 text-white text-2xl">1</button>
+      <button class="btn hover:bg-blue-600 text-white text-2xl">2</button>
+      <button class="btn hover:bg-blue-600 text-white text-2xl">3</button>
+      <button class="btn operator hover:bg-blue-600 text-white text-2xl">-</button>
 
-      <button class="btn">0</button>
-      <button class="btn">.</button>
-      <button class="btn" id="clear">C</button>
-      <button class="btn operator">+</button>
+      <button class="btn hover:bg-blue-600 text-white text-2xl">0</button>
+      <button class="btn hover:bg-blue-600 text-white text-2xl">.</button>
+      <button class="btn hover:bg-blue-600 text-white text-2xl" id="clear">C</button>
+      <button class="btn operator hover:bg-blue-600 text-white text-2xl">+</button>
 
-      <button class="btn col-span-4 bg-blue-500 text-white" id="equals">=</button>
+      <button class="btn col-span-4 bg-blue-500 text-white text-2xl hover:bg-blue-600" id="equals">=</button>
     </div>
   </div>
 
