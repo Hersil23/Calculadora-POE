@@ -64,8 +64,8 @@ document.addEventListener("DOMContentLoaded", () => { // declaramos el evento DO
     return resultadoFinal;// este retur devuelve el resultadoFinal, que es el resultado  de la operacion matematica que ingreso el usuario
   };
 
- buttons.forEach((button) => {// con este bucle forEach recorremos todos los botones de la calculadora
-  const valor = button.textContent.trim();//  eliminamos espacios invisibles del texto del botón actual
+buttons.forEach((button) => {// con este bucle forEach recorremos todos los botones de la calculadora
+  const valor = button.textContent.trim();//  con el método trim eliminamos espacios invisibles del texto del botón actual
   if (button.id !== "clear" && button.id !== "equals") {// con esta condicional verificamos si el botón no es el botón de limpiar o el botón de igual
     button.addEventListener("click", () => agregarCaracter(valor));// agregamos un evento click al botón actual que llama a la función agregarCaracter
   }
