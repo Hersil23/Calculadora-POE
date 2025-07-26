@@ -64,12 +64,12 @@ document.addEventListener("DOMContentLoaded", () => { // declaramos el evento DO
     return resultadoFinal;// este retur devuelve el resultadoFinal, que es el resultado  de la operacion matematica que ingreso el usuario
   };
 
-  buttons.forEach((button) => {// con este bucle forEach recorremos todos los botones de la calculadora
-    const valor = button.textContent;// declaramos una variable valor que almacena el texto del botón actual
-    if (button.id !== "clear" && button.id !== "equals") {// con esta condicional verificamos si el botón no es el botón de limpiar o el botón de igual, esto para evitar que estos botones se manejen de la misma manera que los demás
-      button.addEventListener("click", () => agregarCaracter(valor));// agregamos un evento click al botón actual que llama a la función agregarCaracter con el valor del botón como argumento, esto para que cuando el usuario haga click en un botón, se agregue el caracter correspondiente a la pantalla de la calculadora
-    }
-  });
+ buttons.forEach((button) => {// con este bucle forEach recorremos todos los botones de la calculadora
+  const valor = button.textContent.trim();//  eliminamos espacios invisibles del texto del botón actual
+  if (button.id !== "clear" && button.id !== "equals") {// con esta condicional verificamos si el botón no es el botón de limpiar o el botón de igual
+    button.addEventListener("click", () => agregarCaracter(valor));// agregamos un evento click al botón actual que llama a la función agregarCaracter
+  }
+});
 
   clearButton.addEventListener("click", clearInput);// agregamos un evento click al botón de limpiar que llama a la función clearInput para limpiar la pantalla de la calculadora cuando el usuario haga click en el botón de limpiar
   equalsButton.addEventListener("click", evaluarExpresion);// agregamos un evento click al botón de igual que llama a la función evaluarExpresion para evaluar la expresión matemática ingresada por el usuario cuando haga click en el botón de igual
